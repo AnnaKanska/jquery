@@ -5,10 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <style>
+        .red{ color:red; }
+        .bg-red{ background-color: red;}
+        .blue{
+            color:blue;
+        }
+        .bg-blue{
+            background-color:blue;
+        }
+        .yellow{
+            color:yellow;
+        }
+        .bg-yellow{
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
     
+    <div id="target" class="wrapper" style="color:black">
+        Grandparent
+        <div class="parent container" style="color:black">
+            -Parent
+            <div class="col-md-3 child" style="color:black">--first child</div>
+            <div class="child col-md-6" style="color:black" id="demo">--second child
+                <div class="list first" style="color:black">1</div>
+                <div class="list second" style="color:black">2</div>
+                <div id="3rd" class="list third" style="color:black">3</div>
+                <div class="list fourth" style="color:black; font-size:20px" custom="article">4</div>
+                <div class="list fifth" style="color:black; font-size:20px">5</div>
+                <div class="list sixth" style="color:black">6</div>
+                <div class="list seventh last" style="color:black">7</div>
+            </div>
+            <div class="child col-md-3" style="color:black">--third child</div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      /*  $(function(){
+            $("div.list").click(function(){
+                $(this).hide();
+            })    
+        })
+        */
+   // $('[custom="article"]').text("custom artickle");
+   //$('[class^="col"]').text("i found col");
+   //$('[class^="col"]').text("i found columns");
+   //$('[class*="md"]').text("i found columns MD");
+   //$("#target").attr("style", "color:green; font-size:40px");
+  // $(".parent.container").children(".col-md-3").attr("style","color:red")
+ // $(".parent.container").find("[class^=col]").attr("style", "color:red");
+ //$("#demo").parent().attr("style", "color:red");
+ //$("#demo").parents().attr("style", "color:red");
+// $("#3rd").prevAll().attr("style", "color:red");
+//$("#3rd").prevUntil(".first").attr("style", "color:red");
+//$("#3rd").next().attr("style","color:yellow");
+//$("#3rd").nextAll().attr("style","color:yellow");
+//$("#3rd").nextUntil(".last").attr("style","color:yellow");
+
+
+    </script>
 </body>
 </html>
