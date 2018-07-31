@@ -29,6 +29,7 @@
    margin: 0;
    padding: .1em;
   }
+
   .rating-chosen {
     background-color: green;
    }
@@ -53,6 +54,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
  <script>
+     $(function(){
 //$(".rating-circle").hover().addClass("rating-hover");
 
 /*$(function(){
@@ -68,20 +70,37 @@
         })       
         }) 
         */
-        $(".rating-circle").ready(function(){
-    $(".rating-circle").on({
-        mouseenter: function(){
-            $(this).prevAll().addClass("rating-hover");
+
+            $(".rating-circle").hover(function(){
+                $(this).prevAll().addClass("rating-hover");
                 $(this).addClass("rating-hover");
-        },  
-        mouseleave: function(){
-            $(this).removeClass("rating-hover");
-        }, 
-        click: function(){
-            $(this).addClass("rating-chosen");
-            $(this).prevAll().addClass("rating-chosen");
-        }  
-    });
+            })
+
+            $(".rating-circle").mouseout(function(){
+                $(this).prevAll().removeClass("rating-hover");
+                $(this).removeClass("rating-hover");
+            })
+            $(".rating-circle").click(function(){
+                $(this).prevAll().addClass("rating-chosen");
+                $(this).addClass("rating-chosen");
+                $(this).removeClass("rating-hover");
+            })  
+
+
+    //     $(".rating-circle").ready(function(){
+    // $(".rating-circle").on({
+    //     mouseenter: function(){
+    //         $(this).prevAll().addClass("rating-hover");
+    //             $(this).addClass("rating-hover");
+    //     },  
+    //     mouseleave: function(){
+    //         $(this).removeClass("rating-hover");
+    //     }, 
+    //     click: function(){
+    //         $(this).addClass("rating-chosen");
+    //         $(this).prevAll().addClass("rating-chosen");
+    //     }  
+    // });
 });       
  </script>
 </body>
