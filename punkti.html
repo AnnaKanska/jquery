@@ -54,17 +54,34 @@
 
  <script>
 //$(".rating-circle").hover().addClass("rating-hover");
-$(function(){
+
+/*$(function(){
+ 
+        $(function(){
             $(".rating-circle").hover(function(){
                 $(this).prevAll().addClass("rating-hover");
                 $(this).addClass("rating-hover");
-            })    
-        })
-$(function(){
+            })
             $(".rating-circle").click(function(){
                 $(this).addClass("rating-chosen");
             })    
-        })
+        })       
+        }) 
+        */
+        $(".rating-circle").ready(function(){
+    $(".rating-circle").on({
+        mouseenter: function(){
+            $(this).prevAll().addClass("rating-hover");
+                $(this).addClass("rating-hover");
+        },  
+        mouseleave: function(){
+            $(this).removeClass("rating-hover");
+        }, 
+        click: function(){
+            $(this).addClass("rating-chosen");
+        }  
+    });
+});       
  </script>
 </body>
 </html>
